@@ -14,21 +14,62 @@
         return document.createElement(tagName);
       };
 
-      const container = () => {
-        const container = tagMaker('div');
-        container.id = 'container';
-        return container;
+      const tags = {
+        container: (element) => {
+          const container = tagMaker('div');
+          container.id = 'container';
+          return container;
+        },
+        grid: () => {
+          const grid = tagMaker('div');
+          grid.id = 'gird';
+          return grid;
+        },
+        card1: () => {
+          const card1 = tagMaker('div');
+          card1.id = 'gird';
+          return card1;
+        },
+        card2: () => {
+          const card2 = tagMaker('div');
+          card2.id = 'gird';
+          return card2;
+        },
+        cardText1: () => {
+          const cardText1 = tagMaker('div');
+          cardText1.id = 'gird';
+          return cardText1;
+        },
+        cardText2: () => {
+          const cardText2 = tagMaker('div');
+          cardText2.id = 'gird';
+          return cardText2;
+        },
+        headerText1: () => {
+          const headerText1 = tagMaker('div');
+          headerText1.id = 'gird';
+          return headerText1;
+        },
+        headerText2: () => {
+          const headerText2 = tagMaker('div');
+          headerText2.id = 'gird';
+          return headerText2;
+        },
+        bodyText1: () => {
+          const bodyText1 = tagMaker('div');
+          bodyText1.id = 'gird';
+          return bodyText1;
+        },
+        bodyText2: () => {
+          const bodyText2 = tagMaker('div');
+          bodyText2.id = 'gird';
+          return bodyText2;
+        },
       };
-
-      const grid = tagMaker('div');
-      const card = tagMaker('div');
-      const cardText = tagMaker('div');
-      const headerText = tagMaker('p');
-      const bodyText = tagMaker('p');
 
       const idName = ['container', 'grid'];
 
-      root.appendChild(container());
+      root.appendChild(tags.container());
 
       console.log(root);
     </script>
