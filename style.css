@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: url(root-image.png);
+}
+
+#grid {
+  width: 60%;
+  height: 100%;
+  margin-top: 300px;
+  margin-left: 200px;
+  display: grid;
+  gap: 50px;
+}
+
+.card {
+  border-radius: 25px;
+  background: linear-gradient(90deg, rgba(180, 165, 122, 0.3) 0%, rgba(214, 195, 149, 0.3) 100%);
+  box-shadow: 1px 4px 15.6px -5px #574c31;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  font-size: 50pt;
+  margin-top: 100px;
+  margin-left: 200px;
+}
+
+.body {
+  width: 70%;
+  font-size: 10pt;
+  margin-left: 250px;
+}
