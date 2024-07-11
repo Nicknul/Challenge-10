@@ -1,4 +1,10 @@
-export const styles = {
+import { CSSProperties } from 'react';
+
+interface Styles {
+  [key: string]: CSSProperties;
+}
+
+export const styles: Styles = {
   root: {
     position: 'absolute',
     width: '100vw',
