@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge-10-DOM</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const root = document.getElementById('root');
+
+      const tagMaker = (tagName) => {
+        return document.createElement(tagName);
+      };
+
+      const container = () => {
+        const container = tagMaker('div');
+        container.id = 'container';
+        return container;
+      };
+
+      const grid = tagMaker('div');
+      const card = tagMaker('div');
+      const cardText = tagMaker('div');
+      const headerText = tagMaker('p');
+      const bodyText = tagMaker('p');
+
+      const idName = ['container', 'grid'];
+
+      root.appendChild(container());
+
+      console.log(root);
+    </script>
+  </body>
+</html>
