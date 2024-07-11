@@ -9,6 +9,8 @@
     <div id="root"></div>
     <script>
       const root = document.getElementById('root');
+      document.body.style.margin = 0;
+      document.body.style.padding = 0;
 
       const tagMaker = (tagName) => {
         return document.createElement(tagName);
@@ -26,10 +28,22 @@
         { name: 'bodyText1', attrName: 'body' },
         { name: 'bodyText2', attrName: 'body' },
       ];
-
+      // tag 생성 및 attr 추가
       attributeNames.forEach((index) => {
-        const tags = tagMaker('div');
-        tags.className = index.attrName;
+        if ((index.name.startsWith('headerText') || index.name.startsWith('bodyText')) && /\d+$/.test(index.name)) {
+          let tags = tagMaker('p');
+          tags.className = index.attrName;
+          console.log(tags);
+        } else {
+          let tags = tagMaker('div');
+          if (index.name === 'container' || index.name === 'grid') {
+            tags.id = index.attrName;
+            console.log(tags);
+          } else {
+            tags.className = index.attrName;
+            console.log(tags);
+          }
+        }
       });
 
       const style = [
@@ -69,15 +83,6 @@
           },
         },
       ];
-
-      const tagStyle = (attrNames = '') => {
-        style.forEach((styleNames) => {
-          const keys = Object.keys(styleNames);
-          if (keys === attrNames) {
-          }
-        });
-      };
-      tagStyle();
     </script>
   </body>
 </html>
