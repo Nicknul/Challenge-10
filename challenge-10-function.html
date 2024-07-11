@@ -14,64 +14,70 @@
         return document.createElement(tagName);
       };
 
-      const tags = {
-        container: (element) => {
-          const container = tagMaker('div');
-          container.id = 'container';
-          return container;
+      const attributeNames = [
+        { name: 'container', attrName: 'container' },
+        { name: 'grid', attrName: 'grid' },
+        { name: 'card1', attrName: 'card' },
+        { name: 'card2', attrName: 'card' },
+        { name: 'cardText1', attrName: 'card-text' },
+        { name: 'cardText2', attrName: 'card-text' },
+        { name: 'headerText1', attrName: 'header' },
+        { name: 'headerText2', attrName: 'header' },
+        { name: 'bodyText1', attrName: 'body' },
+        { name: 'bodyText2', attrName: 'body' },
+      ];
+
+      attributeNames.forEach((index) => {
+        const tags = tagMaker('div');
+        tags.className = index.attrName;
+      });
+
+      const style = [
+        {
+          container: {
+            width: '100vw',
+            height: '100vh',
+            display: 'flex',
+            background: 'url(root-image.png)',
+          },
+          grid: {
+            width: '60%',
+            height: '100%',
+            marginTop: '300px',
+            marginLeft: '200px',
+            display: 'grid',
+            gap: '50px',
+          },
+          card: {
+            borderRadius: '25px',
+            background: 'linear-gradient(90deg, rgba(180, 165, 122, 0.3) 0%, rgba(214, 195, 149, 0.3) 100%)',
+            boxShadow: '1px 4px 15.6px -5px #574c31',
+          },
+          cardText: {
+            display: 'flex',
+            flexDirection: 'column',
+          },
+          headerText: {
+            fontSize: '50pt',
+            marginTop: '50px',
+            marginLeft: '100px',
+          },
+          bodyText: {
+            width: '70%',
+            fontSize: '10pt',
+            marginLeft: '150px',
+          },
         },
-        grid: () => {
-          const grid = tagMaker('div');
-          grid.id = 'gird';
-          return grid;
-        },
-        card1: () => {
-          const card1 = tagMaker('div');
-          card1.id = 'gird';
-          return card1;
-        },
-        card2: () => {
-          const card2 = tagMaker('div');
-          card2.id = 'gird';
-          return card2;
-        },
-        cardText1: () => {
-          const cardText1 = tagMaker('div');
-          cardText1.id = 'gird';
-          return cardText1;
-        },
-        cardText2: () => {
-          const cardText2 = tagMaker('div');
-          cardText2.id = 'gird';
-          return cardText2;
-        },
-        headerText1: () => {
-          const headerText1 = tagMaker('div');
-          headerText1.id = 'gird';
-          return headerText1;
-        },
-        headerText2: () => {
-          const headerText2 = tagMaker('div');
-          headerText2.id = 'gird';
-          return headerText2;
-        },
-        bodyText1: () => {
-          const bodyText1 = tagMaker('div');
-          bodyText1.id = 'gird';
-          return bodyText1;
-        },
-        bodyText2: () => {
-          const bodyText2 = tagMaker('div');
-          bodyText2.id = 'gird';
-          return bodyText2;
-        },
+      ];
+
+      const tagStyle = (attrNames = '') => {
+        style.forEach((styleNames) => {
+          const keys = Object.keys(styleNames);
+          if (keys === attrNames) {
+          }
+        });
       };
-
-      const idName = ['container', 'grid'];
-
-      root.appendChild(tags.container());
-
-      console.log(root);
+      tagStyle();
     </script>
   </body>
 </html>
