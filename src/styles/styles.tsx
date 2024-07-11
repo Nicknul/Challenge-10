@@ -19,7 +19,7 @@ export const styles: Styles = {
     height: '100vh',
     background: 'url(/root-image.png)',
     backgroundSize: 'cover',
-    mixBlendMode: 'multiply',
+    mixBlendMode: 'multiply' as any,
   },
   card: {
     position: 'absolute',
