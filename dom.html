@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const root = document.getElementById('root');
+      root.style.position = 'absolute';
+      root.style.width = '100vw';
+      root.style.height = '100vh';
+      root.style.left = '0px';
+      root.style.top = '0px';
+      root.style.background = '#d6c395';
+
+      const rootImage = document.createElement('div');
+      rootImage.id = 'root-image';
+      rootImage.style.position = 'absolute';
+      rootImage.style.width = '100vw';
+      rootImage.style.height = '100vh';
+      rootImage.style.background = 'url(/root-image.png)';
+      rootImage.style.backgroundSize = 'cover';
+      rootImage.style.mixBlendMode = 'multiply';
+      root.appendChild(rootImage);
+
+      const createCard = () => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.position = 'absolute';
+        card.style.width = '1044px';
+        card.style.height = '487px';
+        card.style.left = '178px';
+        card.style.top = '340px';
+
+        const cardContainer = document.createElement('div');
+        cardContainer.className = 'card-container';
+        cardContainer.style.boxSizing = 'border-box';
+        cardContainer.style.position = 'absolute';
+        cardContainer.style.left = '0%';
+        cardContainer.style.right = '0%';
+        cardContainer.style.top = '0%';
+        cardContainer.style.bottom = '0%';
+        cardContainer.style.background =
+          'linear-gradient(90deg, rgba(180, 165, 122, 0.3) 0%, rgba(214, 195, 149, 0.3) 100%)';
+        cardContainer.style.boxShadow = '1px 4px 15.6px -5px #574c31';
+        cardContainer.style.borderRadius = '31px';
+
+        const cardTitle = document.createElement('div');
+        cardTitle.className = 'card-title';
+        cardTitle.textContent = 'hello';
+        cardTitle.style.position = 'absolute';
+        cardTitle.style.left = '13.79%';
+        cardTitle.style.right = '45.4%';
+        cardTitle.style.top = '21.15%';
+        cardTitle.style.bottom = '63.04%';
+        cardTitle.style.fontFamily = 'Inter';
+        cardTitle.style.fontStyle = 'normal';
+        cardTitle.style.fontWeight = '400';
+        cardTitle.style.fontSize = '64px';
+        cardTitle.style.lineHeight = '77px';
+        cardTitle.style.textAlign = 'justify';
+        cardTitle.style.color = '#23201a';
+
+        const cardText = document.createElement('div');
+        cardText.className = 'card-text';
+        cardText.textContent = 'text';
+        cardText.style.position = 'absolute';
+        cardText.style.left = '19.83%';
+        cardText.style.right = '2.97%';
+        cardText.style.top = '38.6%';
+        cardText.style.bottom = '4.52%';
+        cardText.style.fontFamily = 'Inter';
+        cardText.style.fontStyle = 'normal';
+        cardText.style.fontWeight = '400';
+        cardText.style.fontSize = '12px';
+        cardText.style.lineHeight = '15px';
+        cardText.style.textAlign = 'justify';
+        cardText.style.color = '#23201a';
+
+        const cardLine = document.createElement('div');
+        cardLine.className = 'card-line';
+        cardLine.style.position = 'absolute';
+        cardLine.style.left = '54.98%';
+        cardLine.style.right = '2.97%';
+        cardLine.style.top = '24.23%';
+        cardLine.style.bottom = '75.36%';
+        cardLine.style.background = 'linear-gradient(90deg, rgba(210, 143, 67, 0.5) 0%, rgba(80, 47, 10, 0.5) 100%)';
+
+        cardContainer.appendChild(cardTitle);
+        cardContainer.appendChild(cardText);
+        cardContainer.appendChild(cardLine);
+        card.appendChild(cardContainer);
+
+        root.appendChild(card);
+      };
+
+      createCard();
+    </script>
+  </body>
+</html>
