@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="blur.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="wrap">
+      <div class="box">
+        <h2>focus</h2>
+      </div>
+      <div class="box">
+        <h2>focus</h2>
+      </div>
+      <div class="circle" />
+    </section>
+    <script>
+      const html = document.documentElement;
+
+      window.addEventListener('load', function () {
+        html.style.setProperty('--x', 0);
+        html.style.setProperty('--y', 0);
+      });
+
+      html.addEventListener('mousemove', function (e) {
+        html.style.setProperty('--x', e.clientX + 'px');
+        html.style.setProperty('--y', e.clientY + 'px');
+      });
+    </script>
+  </body>
+</html>
